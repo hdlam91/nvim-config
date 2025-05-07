@@ -66,6 +66,7 @@ require("lazy").setup({
         actions = {
           open_file = {
             quit_on_open = true,
+            resize_window = true,
           },
         },
         update_focused_file = {
@@ -74,6 +75,15 @@ require("lazy").setup({
         },
       })
     end
+  },
+
+  {
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("config.bufferline").setup()
+    end,
   },
 
   -- Comments

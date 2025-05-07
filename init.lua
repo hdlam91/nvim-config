@@ -34,7 +34,7 @@ vim.keymap.set("v", "<M-k><M-c>", "<Esc><Cmd>lua require('Comment.api').toggle.l
 
 
 -- Tree toggle
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
 
 -- Fuzzy search
 vim.keymap.set("n", "<M-p>", ":Telescope find_files<CR>", { noremap = true, silent = true })
