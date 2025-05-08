@@ -14,7 +14,6 @@ function nvimTree.setup()
     view = {
       width = 30,
       side = "left",
-      relativenumber = true,
     },
     renderer = {
       highlight_git = true,

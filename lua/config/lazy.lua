@@ -23,6 +23,15 @@ require("lazy").setup({
   -- Editor config
   { "gpanders/editorconfig.nvim" },
 
+  -- Blank lines
+  {
+  "lukas-reineke/indent-blankline.nvim",
+  main = "ibl",
+  config = function()
+    require("config.blankline").setup()
+  end,
+  },
+
   -- LSP and Completion
   { "neovim/nvim-lspconfig" },
   { "hrsh7th/nvim-cmp" },
