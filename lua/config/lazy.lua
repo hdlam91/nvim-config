@@ -40,43 +40,14 @@ require("lazy").setup({
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
-      "nvim-tree/nvim-web-devicons", -- optional, for file icons
+      "nvim-tree/nvim-web-devicons",
     },
     config = function()
-      require("nvim-tree").setup({
-        git = {
-          enable = true,
-        },
-        view = {
-          width = 30,
-          side = "left",
-          relativenumber = true,
-        },
-        renderer = {
-          highlight_git = true,
-          icons = {
-            show = {
-              git = true,
-              folder = true,
-              file = true,
-              folder_arrow = true,
-            },
-          },
-        },
-        actions = {
-          open_file = {
-            quit_on_open = true,
-            resize_window = true,
-          },
-        },
-        update_focused_file = {
-          enable = true,
-          update_cwd = true,
-        },
-      })
-    end
+      require("config.nvimTree").setup()
+    end,
   },
 
+  -- Bufferline
   {
     "akinsho/bufferline.nvim",
     version = "*",
@@ -98,10 +69,18 @@ require("lazy").setup({
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 
   -- Statusline
-  { "nvim-lualine/lualine.nvim" },
+  { "nvim-lualine/lualine.nvim",
+    config = function ()
+      require("lualine").setup()
+    end
+  },
 
   -- Git integration
-  { "lewis6991/gitsigns.nvim" },
+  { "lewis6991/gitsigns.nvim",
+    config = function ()
+      require("gitsigns").setup()
+    end
+  },
 
   -- LSP
   { "williamboman/mason.nvim", config = true },
