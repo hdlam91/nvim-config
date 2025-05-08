@@ -38,7 +38,7 @@ lspconfig.angularls.setup({
 })
 
 -- Setup other servers
-local servers = { "ts_ls", "lua_ls", "pyright" }
+local servers = { "lua_ls", "pyright" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
     capabilities = capabilities,
