@@ -30,6 +30,9 @@ function nvimTree.setup()
     git = {
       enable = true,
     },
+    filters = {
+      dotfiles = true,  -- Hide hidden files permanently
+    },
   })
 end
 
