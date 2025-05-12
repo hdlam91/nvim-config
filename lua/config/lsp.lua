@@ -5,7 +5,7 @@ local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 mason.setup()
 mason_lspconfig.setup({
-  ensure_installed = { "ts_ls", "lua_ls", "angularls", "pyright" },
+  ensure_installed = { "ts_ls", "lua_ls", "angularls", "pyright", "cssls" },
 })
 
 -- Common capabilities for all LSP servers
@@ -38,7 +38,7 @@ lspconfig.angularls.setup({
 })
 
 -- Setup other servers
-local servers = { "lua_ls", "pyright" }
+local servers = { "lua_ls", "pyright", "cssls" }
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
     capabilities = capabilities,

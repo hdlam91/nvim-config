@@ -84,6 +84,17 @@ require("lazy").setup({
     end
   },
 
+  -- Colorizer
+  {
+    "catgoose/nvim-colorizer.lua",
+    event = "BufReadPre",
+    opts = { -- set to setup table
+    },
+    config = function ()
+      require("config.colorizer").setup()
+    end
+  },
+
   -- Git integration
   { "lewis6991/gitsigns.nvim",
     config = function ()
