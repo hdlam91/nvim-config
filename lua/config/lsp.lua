@@ -13,7 +13,7 @@ mason_lspconfig.setup({
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Common on_attach function for keybindings
-local on_attach = function(_, bufnr)
+local on_attach = function(_)
   local opts = { noremap = true, silent = true }
    -- Go to definition
   vim.keymap.set("n", "gd", telescope_builtin.lsp_definitions, opts)
